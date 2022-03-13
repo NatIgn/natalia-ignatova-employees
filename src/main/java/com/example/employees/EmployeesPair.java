@@ -1,8 +1,8 @@
 package com.example.employees;
 
 public class EmployeesPair {
-	int firstEmployeeId;
-	int secondEmployeeId;
+	Employee firstEmployee;
+	Employee secondEmployee;
 	int projectId;
 	long daysWorkedTogether;
 	
@@ -10,28 +10,28 @@ public class EmployeesPair {
 		super();
 	}
 
-	public EmployeesPair(int firstEmployeeId, int secondEmployeeId, int projectId, long daysWorkedTogether) {
+	public EmployeesPair(Employee firstEmployee, Employee secondEmployee, int projectId, long daysWorkedTogether) {
 		super();
-		this.firstEmployeeId = firstEmployeeId;
-		this.secondEmployeeId = secondEmployeeId;
+		this.firstEmployee = firstEmployee;
+		this.secondEmployee = secondEmployee;
 		this.projectId = projectId;
 		this.daysWorkedTogether = daysWorkedTogether;
 	}
 
-	public int getFirstEmployeeId() {
-		return firstEmployeeId;
+	public Employee getFirstEmployee() {
+		return firstEmployee;
 	}
 
-	public void setFirstEmployeeId(int firstEmployeeId) {
-		this.firstEmployeeId = firstEmployeeId;
+	public void setFirstEmployeeId(Employee firstEmployee) {
+		this.firstEmployee = firstEmployee;
 	}
 
-	public int getSecondEmployeeId() {
-		return secondEmployeeId;
+	public Employee getSecondEmployee() {
+		return secondEmployee;
 	}
 
-	public void setSecondEmployeeId(int secondEmployeeId) {
-		this.secondEmployeeId = secondEmployeeId;
+	public void setSecondEmployeeId(Employee secondEmployee) {
+		this.secondEmployee = secondEmployee;
 	}
 
 	public int getProjectId() {

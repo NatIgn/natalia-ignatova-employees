@@ -22,8 +22,8 @@
                 <tbody>
                 <tr th:each="employeesPair, i : ${empsPairs}">
                     <th scope="row" th:text="${i.index + 1}"></th>
-                    <td th:text="${employeesPair.getFirstEmployeeId}"></td>
-                    <td th:text="${employeesPair.getSecondEmployeeId}"></td>
+                    <td th:text="${employeesPair.getFirstEmployee.getEmployeeId()}"></td>
+                    <td th:text="${employeesPair.getSecondEmployee.getEmployeeId}"></td>
                     <td th:text="${employeesPair.getProjectId}"></td>
                     <td th:text="${employeesPair.getDaysWorkedTogether}"></td>
                 </tr>

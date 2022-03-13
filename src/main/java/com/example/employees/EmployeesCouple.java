@@ -1,40 +1,40 @@
 package com.example.employees;
 
 public class EmployeesCouple {
-	public int firstEmployeeId;
-	public int secondEmployeeId;
+	public Employee firstEmployee;
+	public Employee secondEmployee;
 	
 	public EmployeesCouple() {
 		super();
 	}
 
-	public EmployeesCouple(int firstEmployeeId, int secondEmployeeId) {
+	public EmployeesCouple(Employee firstEmployee, Employee secondEmployee) {
 		super();
-		this.firstEmployeeId = firstEmployeeId;
-		this.secondEmployeeId = secondEmployeeId;
+		this.firstEmployee = firstEmployee;
+		this.secondEmployee = secondEmployee;
 	}
 
-	public int getFirstEmployeeId() {
-		return firstEmployeeId;
+	public Employee getFirstEmployee() {
+		return firstEmployee;
+	}
+	
+	public void setFirstEmployee(Employee firstEmployee) {
+		this.firstEmployee = firstEmployee;
 	}
 
-	public void setFirstEmployeeId(int firstEmployeeId) {
-		this.firstEmployeeId = firstEmployeeId;
+	public Employee getSecondEmployee() {
+		return secondEmployee;
 	}
 
-	public int getSecondEmployeeId() {
-		return secondEmployeeId;
-	}
-
-	public void setSecondEmployeeId(int secondEmployeeId) {
-		this.secondEmployeeId = secondEmployeeId;
+	public void setSecondEmployee(Employee secondEmployee) {
+		this.secondEmployee = secondEmployee;
 	}
 
 	@Override
     public int hashCode() {
         int hash = 5;
-        hash = 89 * hash + this.firstEmployeeId;
-        hash = 89 * hash + this.secondEmployeeId;
+        hash = 89 * hash + this.firstEmployee.getEmployeeId();
+        hash = 89 * hash + this.secondEmployee.getEmployeeId();
         return hash;
     }
 
@@ -50,7 +50,7 @@ public class EmployeesCouple {
 
         EmployeesCouple employeeCouple = (EmployeesCouple) empCouple;
 
-        return this.firstEmployeeId == employeeCouple.firstEmployeeId && this.secondEmployeeId == employeeCouple.secondEmployeeId;
+        return this.firstEmployee.getEmployeeId() == employeeCouple.getFirstEmployee().getEmployeeId() && this.secondEmployee.getEmployeeId() == employeeCouple.getSecondEmployee().getEmployeeId();
 	}
 
 }

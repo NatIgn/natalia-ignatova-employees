@@ -51,13 +51,13 @@ public class EmployeeController {
 					if (max != 0) {
 						EmployeesPair empsPair = null;
 						if(employeesList.get(i).getEmployeeId() < employeesList.get(j).getEmployeeId()) {
-							empsPair = new EmployeesPair(employeesList.get(i).getEmployeeId(), employeesList.get(j).getEmployeeId(), employeesList.get(i).getProjectId(), max);
+							empsPair = new EmployeesPair(employeesList.get(i), employeesList.get(j), employeesList.get(i).getProjectId(), max);
 						} else {
-								empsPair = new EmployeesPair(employeesList.get(j).getEmployeeId(), employeesList.get(i).getEmployeeId(), employeesList.get(i).getProjectId(), max);
+								empsPair = new EmployeesPair(employeesList.get(j), employeesList.get(i), employeesList.get(i).getProjectId(), max);
 						}					
 						empsPairs.add(empsPair);
 
-						EmployeesCouple empsCouple = new EmployeesCouple(empsPair.getFirstEmployeeId(), empsPair.getSecondEmployeeId());
+						EmployeesCouple empsCouple = new EmployeesCouple(empsPair.getFirstEmployee(), empsPair.getSecondEmployee());
 						if (pairsMaxDaysTogether.containsKey(empsCouple)) {
 							long pairsMaxDays = pairsMaxDaysTogether.get(empsCouple) + max;
 							pairsMaxDaysTogether.put(empsCouple, pairsMaxDays);
@@ -78,12 +78,11 @@ public class EmployeeController {
 			List<EmployeesPair> projectPairsWorkedLongest = new ArrayList<>();
 			
 			for (EmployeesPair employeesPair : empsPairs) {
-				if(employeesPair.getFirstEmployeeId() == coupleWithLongestPeriod.getFirstEmployeeId() && employeesPair.getSecondEmployeeId() == coupleWithLongestPeriod.getSecondEmployeeId()) {
+				if(employeesPair.getFirstEmployee().getEmployeeId() == coupleWithLongestPeriod.getFirstEmployee().getEmployeeId() && employeesPair.getSecondEmployee().getEmployeeId() == coupleWithLongestPeriod.getSecondEmployee().getEmployeeId()) {
 					projectPairsWorkedLongest.add(employeesPair);
 				}
 			}
-			
-			model.addAttribute("couple", coupleWithLongestPeriod);
+
 			model.addAttribute("empsPairs", projectPairsWorkedLongest);
 			model.addAttribute("status", true);
 		}
