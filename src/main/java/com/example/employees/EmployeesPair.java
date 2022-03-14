@@ -1,10 +1,10 @@
 package com.example.employees;
 
 public class EmployeesPair {
-	Employee firstEmployee;
-	Employee secondEmployee;
-	int projectId;
-	long daysWorkedTogether;
+	private Employee firstEmployee;
+	private Employee secondEmployee;
+	private int projectId;
+	private long daysWorkedTogether;
 	
 	public EmployeesPair() {
 		super();

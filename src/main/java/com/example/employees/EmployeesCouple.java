@@ -1,8 +1,8 @@
 package com.example.employees;
 
 public class EmployeesCouple {
-	public Employee firstEmployee;
-	public Employee secondEmployee;
+	private Employee firstEmployee;
+	private Employee secondEmployee;
 	
 	public EmployeesCouple() {
 		super();

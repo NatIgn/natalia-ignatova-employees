@@ -8,14 +8,14 @@ import com.opencsv.bean.CsvDate;
 
 public class Employee {
 	@CsvBindByName
-	int employeeId;
+	private int employeeId;
 	@CsvBindByName
-	int projectId;
+	private int projectId;
 	@CsvDate(value = "yyyy/MM/dd")
 	@CsvBindByName
-	Date dateFrom;
+	private Date dateFrom;
 	@CsvCustomBindByName(converter = DateToConverter.class)
-	Date dateTo;
+	private Date dateTo;
 	
 	
 	public Employee() {
